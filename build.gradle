@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'com.typesafe.akka:akka-actor_2.12:2.5.9'
+    compile group: 'com.typesafe.akka', name: 'akka-persistence_2.12', version: '2.5.9'
+    compile group: 'org.fusesource.leveldbjni', name: 'leveldbjni-all', version: '1.8'
+    compile 'org.apache.commons:commons-lang3:3.1'
+    compile group: 'com.typesafe.akka', name: 'akka-slf4j_2.11', version: '2.5.9'
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    testCompile 'com.typesafe.akka:akka-testkit_2.12:2.5.9'
+    testCompile 'junit:junit:4.12'
+    testCompile 'commons-io:commons-io:2.6'
+}
+
+
+run {
+    standardInput = System.in
+}
